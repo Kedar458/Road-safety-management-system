@@ -1,0 +1,72 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/nav.css">
+</head>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: aliceblue;
+  }
+table{
+  border:10px solid black;
+  width: 1000px;
+  height: 300px;
+ 
+  margin-top: 65px;
+  margin-left: 150px;
+  /* display: flex; */
+  text-align: center;
+}
+.table_main{
+  display: flex;
+  justify-content: center;
+ 
+  align-items: center;
+
+}
+</style>
+<body style="background-image: url(../static/assets/search.jpg); background-repeat: no-repeat;  background-attachment: fixed;
+background-size: 100% 100%;">
+    <div class="topnav">
+        <a class="active" href="{%url 'search'%}">Home</a>
+        <a href="{%url 'complaints'%}">register a complaint</a>
+        <a href="{%url 'report'%}">report an accident</a>
+        <a href="{%url 'home'%}">Logout</a>
+    </div>
+
+    <div class="table_main">
+        <table>
+            <tr>
+                <th>Road id</th>
+                <th>Road Name</th>
+                <th>Length</th>
+                <th>Lanes</th>
+                <th>Road_type</th>
+                <th>Speed Limit</th>
+                
+            </tr>
+            {%for road in roadName%}
+            <tr>
+                <td>{{road.id}}</td>
+                <td>{{road.name}}</td>
+                <td>{{road.length}}</td>
+                <td>{{road.lanes}}</td>
+                <td>{{road.street_type}}</td>
+                <td>{{road.speed_limit}}</td>
+
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+    {{posts}}
+</body>
+
+</html>

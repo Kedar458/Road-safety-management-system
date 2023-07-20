@@ -1,0 +1,60 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+    <title>RDBMS</title>
+    <link rel="stylesheet" href="{%static 'search.css'%}">
+</head>
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        background-color: aliceblue;
+      }
+    table{
+      border:10px solid black;
+      width: 1000px;
+      height: 300px;
+     
+      margin-top: 65px;
+      margin-left: 150px;
+      /* display: flex; */
+      text-align: center;
+    }
+    .table_main{
+      display: flex;
+      justify-content: center;
+     
+      align-items: center;
+    
+    }
+      
+    
+</style>
+<body style="background-image: url(../static/assets/search.jpg); background-repeat: no-repeat;  background-attachment: fixed;
+background-size: 100% 100%;">
+    <div class="topnav">
+        <a class="active" href="{%url 'search'%}">Home</a>
+        <a href="{%url 'complaints'%}">register a complaint</a>
+        <a href="{%url 'report'%}">report an accident</a>
+        <a href="{%url 'home'%}">Logout</a>
+      </div>
+    
+
+    <table>
+        <tr>
+            <th>Choose an area</th>
+        </tr>
+        {%for area in area_list%}
+        <tr>
+            <td><a href="{%url 'choice' area.id %}">{{area.name}}</a></td>
+        </tr>
+        {%endfor%}
+
+    </table>
+    
+</body>
+</html>

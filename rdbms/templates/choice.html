@@ -1,0 +1,64 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{%static 'search.css'%}">
+</head>
+<style>
+.roads a {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 25px;
+  background-color: rgba(229, 109, 11, 0.945);
+  color: black;
+  padding: 50px 50px;
+  font-size: 36px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.roads a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.accidents a {
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 25px;
+    background-color:rgba(255, 174, 0, 0.861);
+    color: black;
+    padding: 50px 50px;
+    font-size: 36px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .accidents a:hover {
+  background-color: #ddd;
+  color: black;
+}  
+</style>
+
+<body style="background-image: url(../static/assets/search.jpg); background-repeat: no-repeat;  background-attachment: fixed;
+background-size: 100% 100%;">
+  <div class="topnav">
+    <a class="active" href="{%url 'search'%}">Home</a>
+    <a href="{%url 'complaints'%}">register a complaint</a>
+    <a href="{%url 'report'%}">report an accident</a>
+    <a href="{%url 'home'%}">Logout</a>
+    </div>
+
+<h2 style="color:white;">For information about roads in this area click below</h2>
+<div class="roads">
+<a href="{%url 'roads' area_id %}">Roads</a>
+</div>
+<h2 style="color:white;">For information about accidents in this area click below</h2>
+<div class="accidents">
+<a href="{%url 'accidentss' area_id %}">Accidents</a>
+</div>
+</body>
+</html>
